@@ -1,21 +1,26 @@
 body {
     margin: 0;
     padding: 0;
-    /* background: url("../img/background.jpg") no-repeat center center fixed;
+    background: url("../img/background.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
        -moz-background-size: cover;
          -o-background-size: cover;
-            background-size: cover; */
-    /* color: white; */
+            background-size: cover;
+    color: red;
 }
 
 h1 {
     font-family: 'Titan One', cursive;
     letter-spacing: 3px;
     font-size: 100px;
-    /* color: white; */
+    color: red;
 }
 
-.trythese {
+h2 {
+    color: white;
+}
 
+.submit, .toDevour {
+    width: 100%;
+    color: white;
 }
