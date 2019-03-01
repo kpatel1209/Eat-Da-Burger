@@ -1,19 +1,23 @@
 const orm = require("../config/orm");
 
 let burger = {
-    all: function(callback) {
+    all: function(cb) {
         orm.all("burgers", function(res) {
-            callback(res);
+            cb(res);
         })
     },
-
-    update: function(id, callback) {
-        orm.update("burgers", id, callback);
-    },
     
-    create: function (name, callback) {
-        orm.create("burgers", name, callback);
-    }
+    create: function (name, cb) {
+        orm.create("burgers", name, cb, function(res) {
+            cb(res);
+        });
+    },
+
+    update: function(id, cb) {
+        orm.update("burgers", id, cb, function(res) {
+            cb(res);
+        });
+    },
 };
 
 module.exports = burger;

@@ -1,26 +1,32 @@
 const connection = require("./connection");
 
 let orm = {
-    all: function(tableInput, callback) {
-        connection.query("SELECT * FROM " +tableInput+ ";", function(err, result) {
-            if(err) throw err;
-            callback(result);
-        });
-    },
-    
-    update: function(tableInput, condition, callback) {
-        connection.query("UPDATE " +tableInput+ " SET devoured=true WHERE id=" +condition+ ";", function(err, result) {
-            if(err) throw error;
-            callback(result);
+    all: function(tableInput, cb) {
+        connection.query("SELECT * FROM " + tableInput + ";", function(err, result) {
+            if(err) {
+                throw err;
+            }
+            cb(result);
         });
     },
 
-    create: function(tableInput, val, callback) {
-        connection.query("INSERT INTO " +tableInput+ "(burger_name) VALUES ('"+val+"');", function(err, result) {
-            if(err) throw error;
-            callback(result);
-        })
-    }
+    create: function(tableInput, val, cb) {
+        connection.query("INSERT INTO " + tableInput + "(burger_name) VALUES ('"+val+"');", function(err, result) {
+            if(err) {
+                throw error;
+            }
+            cb(result);
+        });
+    },
+    
+    update: function(tableInput, condition, cb) {
+        connection.query("UPDATE " + tableInput + " SET devoured=true WHERE id=" + condition + ";", function(err, result) {
+            if(err) {
+                throw error;
+            }
+            cb(result);
+        });
+    }    
 }
 
 // Export the orm object for the model
