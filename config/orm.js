@@ -1,24 +1,24 @@
 const connection = require("./connection");
 
 let orm = {
-    all: function(tableInput, cb) {
+    all: function(tableInput, callback) {
         connection.query("SELECT * FROM " +tableInput+ ";", function(err, result) {
             if(err) throw err;
-            cb(result);
+            callback(result);
         });
     },
     
-    update: function(tableInput, condition, cb) {
+    update: function(tableInput, condition, callback) {
         connection.query("UPDATE " +tableInput+ " SET devoured=true WHERE id=" +condition+ ";", function(err, result) {
             if(err) throw error;
-            cb(result);
+            callback(result);
         });
     },
 
-    create: function(tableInput, val, cb) {
+    create: function(tableInput, val, callback) {
         connection.query("INSERT INTO " +tableInput+ "(burger_name) VALUES ('"+val+"');", function(err, result) {
             if(err) throw error;
-            cb(result);
+            callback(result);
         })
     }
 }

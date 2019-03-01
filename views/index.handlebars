@@ -1,13 +1,10 @@
 <div class="container">
-    
     <h1 class="text-center">Eat Da Burger</h1>
     
-
     <div class="row">
-
-        <div class="col-12 col-lg-4 mb-5 text-center task">
+        <div class="col-12 col-lg-4 mb-5 text-center">
             <div class="row">
-                <div class="col-11">
+                <div class="col-11 box">
                     <h2 class="mb-4">Add Your Burger:</h2>
                     <form action="/burgers/create" method="POST">
                         <div class="form-group py-3 mb-4">
@@ -21,9 +18,9 @@
             </div>
         </div>
 
-        <div class="col-12 col-lg-4 mb-5 text-center task">
+        <div class="col-12 col-lg-4 mb-5 text-center">
             <div class="row">
-                <div class="col-11">
+                <div class="col-11 box">
                     <h2 class="mb-5 text-center">To Be Devoured:</h2>
                         {{#each burger_data}}
                             {{#unless this.devoured}}
@@ -31,7 +28,7 @@
                                     <div class="col-11 mb-2 text-center">
                                         <form action="/burgers/update?_method=PUT" method="POST" class="button-size">
                                             <input type="hidden" name="burger_id" type="text" value={{this.id}}>
-                                            <button type="submit" class="btn btn-success toDevour" title="Click to Devour!">{{this.burger_name}}</button>
+                                            <button type="submit" class="btn btn-success toDevour" title="Click to Devour!">{{this.id}}. {{this.burger_name}}</button>
                                         </form>
                                     </div>
                                 </div>
@@ -41,13 +38,15 @@
             </div>
         </div>        
         
-        <div class="col-12 col-lg-4 mb-5 text-center task">
+        <div class="col-12 col-lg-4 mb-5">
             <div class="row">
-                <div class="col-11">
+                <div class="col-11 box">
                     <h2 class="mb-5 text-center">Already Devoured:</h2>
                         {{#each burger_data}}
                             {{#if this.devoured}}
-                                <input class="form-control" type="text" placeholder="{{this.id}}. {{this.burger_name}}" readonly>
+                                <ul class="list-group list-group-flush">
+                                    <li class="devoured text-center" style="list-style-type:none;">{{this.id}}. {{this.burger_name}}</li>
+                                </ul>
                             {{/if}}
                         {{/each}}
                 </div>

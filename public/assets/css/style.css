@@ -6,21 +6,35 @@ body {
        -moz-background-size: cover;
          -o-background-size: cover;
             background-size: cover;
-    color: red;
+    color: white;
 }
 
 h1 {
     font-family: 'Titan One', cursive;
     letter-spacing: 3px;
     font-size: 100px;
-    color: red;
+    color: blue;
+    padding-bottom: 15px;
 }
 
 h2 {
     color: white;
+    padding-top: 20px;
 }
 
 .submit, .toDevour {
     width: 100%;
     color: white;
+    font-weight: bold;
+}
+
+.box {
+    border: 5px white solid;
+    min-height: 525px;
+    border-radius: 25px;
+    background-color: rgba(0, 0, 0, 0.50);
+}
+
+.devoured {
+    font-size: 20px;
 }
