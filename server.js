@@ -3,16 +3,7 @@ const exphbs = require("express-handlebars");
 const app = express();
 const PORT = process.env.PORT || 8080;
 
-if (process.env.JAWSDB_URL) {
-    connection = mysql.createConnection(process.env.JAWSDB_URL);
-  } else {
-    connection = mysql.createConnection({
-      host: "localhost",
-      user: "root",
-      password: "password",
-      database: "burgers_db"
-    });
-  }
+
 
 
 // Serve static content for the app from the "public" directory in the application directory.
