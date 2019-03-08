@@ -1,21 +1,21 @@
 const orm = require("../config/orm");
 
 let burger = {
-    all: function(cb) {
+    all: function(callback) {
         orm.all("burgers", function(res) {
-            cb(res);
+            callback(res);
         })
     },
     
-    create: function (name, cb) {
-        orm.create("burgers", name, cb, function(res) {
-            cb(res);
+    create: function (name, callback) {
+        orm.create("burgers", name, callback, function(res) {
+            callback(res);
         });
     },
 
-    update: function(id, cb) {
-        orm.update("burgers", id, cb, function(res) {
-            cb(res);
+    update: function(id, callback) {
+        orm.update("burgers", id, callback, function(res) {
+            callback(res);
         });
     },
 };
