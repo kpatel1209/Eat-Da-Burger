@@ -1,5 +1,5 @@
 # Eat Da Burger!
-A Burger Eatin' Application With Node.js/Express/MySQL/Handlebars/Bootstrap
+A web application for devouring burgers with Node.js/Express/MySQL/Handlebars/Bootstrap
 
 ## Description
 
