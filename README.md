@@ -1,4 +1,4 @@
-# Eat Da Burger!
+# HW #13 - Eat Da Burger!
 A web application for devouring burgers with Node.js/Express/MySQL/Handlebars/Bootstrap
 
 ## Description
